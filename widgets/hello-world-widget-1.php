@@ -105,7 +105,7 @@
          * @return array Widget categories.
          */
         public function get_categories() {
-            return ['general'];
+            return ['general','TEXT'];
         }
 
         /**

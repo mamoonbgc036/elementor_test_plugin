@@ -8,6 +8,26 @@
  * Text Domain: elementor_test_plugin-
  */
 
+ function add_elementor_widget_categories( $elements_manager ) {
+
+	$elements_manager->add_category(
+		'TEXT',
+		[
+			'title' => esc_html__( 'TEXT', 'textdomain' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+	$elements_manager->add_category(
+		'second-category',
+		[
+			'title' => esc_html__( 'Second Category', 'textdomain' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+
+}
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
+
  function register_hello_world_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/widgets/hello-world-widget-1.php' );
